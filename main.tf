@@ -64,10 +64,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
     }
   }
 }
-  
-  data "aws_s3_bucket" "bucket_source_data" {
-  bucket = var.bucket_name
-}
+
 
 # Block public access 
  resource "aws_s3_bucket_public_access_block" "bucket_source_data" {

@@ -4,6 +4,7 @@ variable "region_name" {
 }
 
 variable "env" {
+  description = "Tag for s3 bucket"
   type = string
   default = ""
 }
@@ -15,96 +16,93 @@ variable "bucketname" {
 }
 
 variable "acl" {
-  description = "details of Access control list"
+  description = "Details of Access control list"
   type        = string
   default     = "private"
 }
 
 variable "versioning_enabled" {
-  description = "A state of versioning"
+  description = "A state of versioning true or false"
   type        = bool
   default     = true
 }
 
 variable "kms_master_key_id" {
-    type        = string
     description = "The AWS KMS master key ID used for the SSE-KMS encryption"
+    type        = string
     default     = ""
 }
 
 variable "sse_algorithm" {
+  description = "Required Valid values are AES256 and aws:kms"
     type        = string
-    description = "Required Valid values are AES256 and aws:kms"
     default     = ""
 }
 
 variable "lifecycle_rule_id" {
+   description = "Define name of the Lifecycle rule"
     type        = string
-    description = "Apply to all objects in the bucket"
     default     = ""
 }
 
 variable "lifecycle_rule_enabled" {
+   description = "Enable or Disable the Lifecycle rule"
     type        = bool
-    description = "Apply to all objects in the bucket"
 }
 
 variable "standard_ia_days" {
+  description = "Objects transition days to Standard-IA"
     type        = number
-    description = "Apply to all objects in the bucket"
-    default     = 30
 }
 
-
-variable "expiration_days" {
-    type        = number
-    description = "Apply to all objects in the bucket"
-    default     = 365
-}
 variable "standard_ia" {
+  description = "Objects transition to Standard-IA"
     type        = string
-    description = "Apply to all objects in the bucket"
     default     = "standard_ia"
 }
 
 variable "glacier_days" {
+  description = "Objects transition days to Glacier"
     type        = number
-    description = "Apply to all objects in the bucket"
-    default     = 90
 }
 
 variable "glacier" {
+  description = "Objects transition to Glacier"
     type        = string
-    description = "Apply to all objects in the bucket"
     default     = "glacier"
 }
 
+variable "expiration_days" {
+  description = "Objects expire"
+    type        = number
+}
+
 variable "sameaccount_replication_rule" {
+   description = "IAM rule to access s3 objects from same account in different account bucket"
     type        = string
-    description = "IAM rule to access s3 objects from same account in different bucket"
     default     = ""
 }
 
 variable "destination_bucket" {
+  description = "Replicate objects in destination bucket in different account"
     type        = string
-    description = "Details of destination bucket"
     default     = ""
 }
 variable "prefix" {
+  description = "To apply to all objects or filter objects in the bucket"
     type        = string
-    description = "This rule applies to all objects in the bucket"
     default     = ""
 }
 
 variable "replication_rules_enabled" {
+  description = "Choose rule will be enabled or disabled when created"
     type        = string
-    description = "IAM rule to access s3 objects from same account in different bucket"
     default     = ""
 }
 
 variable "replicate_objects_encryption" {
+   description = "Replicate objects encrypted with AWS KMS will be true or false"
     type        = bool
-    description = "Replicate objects encrypted with AWS KMS"
 }
 
 variable "replica_kms_id" {
@@ -115,6 +113,6 @@ variable "replica_kms_id" {
 
 variable "bucket_name" {
     type        = string
-    description = "Replicate source bucket objects"
+    description = "Block public access on the bucket when bucket created"
   default     = ""
 }

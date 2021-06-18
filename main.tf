@@ -68,7 +68,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
 
 # Block public access 
  resource "aws_s3_bucket_public_access_block" "bucket_source_data" {
- bucket                  = data.aws_s3_bucket.bucket_source_data.bucket
+ bucket                  = aws_s3_bucket.bucket_source_data.bucket
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true

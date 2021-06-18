@@ -6,10 +6,12 @@ resource "aws_s3_bucket" "bucket_source_data" {
     environment = var.env
   }
 
+# Bucket versiong enabled for replication or else Disable
  versioning {
     enabled = var.versioning_enabled
   }
-  
+ 
+# Automatically encrypt new objects stored in this bucket
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
@@ -19,6 +21,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
     }
   }
   
+# Define actions for S3 to take during an object's lifetime such as transitioning objects to another storage class and archiving
   lifecycle_rule {
     id      = var.lifecycle_rule_id
     enabled = var.lifecycle_rule_enabled
@@ -40,6 +43,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
     }
   }
   
+  # To define options you want Amazon S3 to apply during replication 
   replication_configuration {
     role = var.sameaccount_replication_rule
 
@@ -64,6 +68,8 @@ resource "aws_s3_bucket" "bucket_source_data" {
   data "aws_s3_bucket" "bucket_source_data" {
   bucket = var.bucket_name
 }
+
+# Block public access 
  resource "aws_s3_bucket_public_access_block" "bucket_source_data" {
  bucket                  = data.aws_s3_bucket.bucket_source_data.bucket
   block_public_acls       = true

@@ -1,7 +1,3 @@
-variable "region_name" {
-  type = string
-  default = ""
-}
 
 variable "env" {
   description = "Tag for s3 bucket"

@@ -136,3 +136,9 @@ variable "bucket_name" {
     description = "Block public access on the bucket when bucket created"
   default     = ""
 }
+
+variable "key" {
+    type        = string
+    description = "Block public access on the bucket when bucket created"
+  default     = ""
+}

@@ -55,59 +55,65 @@ variable "restrict_public_buckets" {
   default = true
 }
 
-#variable "lifecycle_rule_id" {
- #  description = "Define name of the Lifecycle rule"
- #   type        = string
-  #  default     = ""
-#}
+variable "lifecycle_rule_id" {
+ description = "Define name of the Lifecycle rule"
+   type        = string
+   default     = "replicationtest"
+}
 
-#variable "lifecycle_rule_enabled" {
-  # description = "Enable or Disable the Lifecycle rule"
-  #  type        = bool
-#}
+variable "lifecycle_rule_enabled" {
+  description = "Enable or Disable the Lifecycle rule"
+  type        = bool
+  default     = true
+}
 
-#variable "standard_ia_days" {
-  #description = "Objects transition days to Standard-IA"
- #   type        = number
-#}
+variable "prefix" {
+  description = "To apply to all objects or filter objects in the bucket"
+   type        = string
+   default     = ""
+}
+variable "standard_ia_days" {
+  description = "Objects transition days to Standard-IA"
+    type        = number
+  default = 30
+}
 
-#variable "standard_ia" {
- # description = "Objects transition to Standard-IA"
- #   type        = string
- #   default     = "standard_ia"
-#}
+variable "standard_ia" {
+  description = "Objects transition to Standard-IA"
+    type        = string
+    default     = "STANDARD_IA"
+}
 
-# variable "glacier_days" {
- # description = "Objects transition days to Glacier"
-   # type        = number
-#}
+ variable "glacier_days" {
+  description = "Objects transition days to Glacier"
+    type        = number
+   default = 90
+}
 
-#variable "glacier" {
- # description = "Objects transition to Glacier"
- #   type        = string
- #   default     = "glacier"
-#}
+variable "glacier" {
+  description = "Objects transition to Glacier"
+    type        = string
+    default     = "GLACIER"
+}
 
-#variable "expiration_days" {
-  #description = "Objects expire"
-   # type        = number
-#}
+variable "expiration_days" {
+  description = "Objects expire"
+    type        = number
+  default     = 365
+}
 
-#variable "sameaccount_replication_rule" {
-  # description = "IAM rule to access s3 objects from same account in different account bucket"
-  #  type        = string
-  #  default     = ""
+#variable "crossaccount_replication_rule" {
+ # description = "IAM rule to access s3 objects from same account in different account bucket"
+#   type        = string
+ #  default     = ""
 #}
 
 #variable "destination_bucket" {
-#  description = "Replicate objects in destination bucket in different account"
-   # type        = string
+ #description = "Replicate objects in destination bucket in different account"
+  #  type        = string
    # default     = ""
 #}
-#variable "prefix" {
- # description = "To apply to all objects or filter objects in the bucket"
- #   type        = string
-#    default     = ""
+
 #variable "replication_rules_enabled" {
  # description = "Choose rule will be enabled or disabled when created"
   #  type        = string

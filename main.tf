@@ -22,30 +22,30 @@ resource "aws_s3_bucket" "bucket_source_data" {
   }
 
 # Define actions for S3 to take during an object's lifetime such as transitioning objects to another storage class and archiving
- # lifecycle_rule {
-  #  id      = var.lifecycle_rule_id
-  #  enabled = var.lifecycle_rule_enabled
+  lifecycle_rule {
+   id      = var.lifecycle_rule_id
+   enabled = var.lifecycle_rule_enabled
 
-  #  prefix = var.prefix
+    prefix = var.prefix
 
-  #  transition {
-    #  days          = var.standard_ia_days
-    #  storage_class = var.standard_ia
-    #}
+    transition {
+     days          = var.standard_ia_days
+     storage_class = var.standard_ia
+    }
 
-  #  transition {
-   #   days          = var.glacier_days
-   #   storage_class = var.glacier
-  #  }
+   transition {
+     days          = var.glacier_days
+     storage_class = var.glacier
+    }
 
-   # expiration {
-   #   days = var.expiration_days
-   # }
-  #}
+   expiration {
+     days = var.expiration_days
+    }
+  }
  
   # To define options you want Amazon S3 to apply during replication 
   #replication_configuration {
-   # role = var.sameaccount_replication_rule
+   # role = var.crossaccount_replication_rule
 
     #rules {
     #  prefix = var.prefix

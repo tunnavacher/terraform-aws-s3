@@ -76,6 +76,6 @@ resource "aws_s3_bucket" "bucket_source_data" {
 resource "aws_s3_bucket_object" "bucket_object" {
   key        = var.key
   bucket     = aws_s3_bucket.bucket_source_data.bucket
-  source     = "lambda_function.zip"
+  source     = ["lambda_function.zip","username.csv"]
   server_side_encryption = var.server_side_encryption
 }

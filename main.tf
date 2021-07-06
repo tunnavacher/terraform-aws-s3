@@ -61,8 +61,8 @@ resource "aws_s3_bucket" "bucket_source_data" {
        #   enabled = var.replicate_objects_encryption
       #  }
       #}
-    }
-  }
+    #}
+  #}
 }
 # Block public access 
  resource "aws_s3_bucket_public_access_block" "bucket_source_data" {

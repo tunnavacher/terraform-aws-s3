@@ -142,3 +142,9 @@ variable "key" {
     description = "Block public access on the bucket when bucket created"
   default     = ""
 }
+
+variable "server_side_encryption" {
+    type        = string
+    description = "encryption on object"
+  default     = ""
+}

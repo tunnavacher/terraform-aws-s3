@@ -35,77 +35,95 @@ variable "sse_algorithm" {
     default     = ""
 }
 
-variable "lifecycle_rule_id" {
-   description = "Define name of the Lifecycle rule"
-    type        = string
-    default     = ""
+variable "block_public_acls" {
+  type = bool
+  default = true
 }
 
-variable "lifecycle_rule_enabled" {
-   description = "Enable or Disable the Lifecycle rule"
-    type        = bool
+variable "block_public_policy" {
+  type = bool
+  default = true
 }
 
-variable "standard_ia_days" {
-  description = "Objects transition days to Standard-IA"
-    type        = number
+variable "ignore_public_acls" {
+  type = bool
+  default = true
 }
 
-variable "standard_ia" {
-  description = "Objects transition to Standard-IA"
-    type        = string
-    default     = "standard_ia"
+variable "restrict_public_buckets" {
+  type = bool
+  default = true
 }
 
-variable "glacier_days" {
-  description = "Objects transition days to Glacier"
-    type        = number
-}
+#variable "lifecycle_rule_id" {
+ #  description = "Define name of the Lifecycle rule"
+ #   type        = string
+  #  default     = ""
+#}
 
-variable "glacier" {
-  description = "Objects transition to Glacier"
-    type        = string
-    default     = "glacier"
-}
+#variable "lifecycle_rule_enabled" {
+  # description = "Enable or Disable the Lifecycle rule"
+  #  type        = bool
+#}
 
-variable "expiration_days" {
-  description = "Objects expire"
-    type        = number
-}
+#variable "standard_ia_days" {
+  #description = "Objects transition days to Standard-IA"
+ #   type        = number
+#}
 
-variable "sameaccount_replication_rule" {
-   description = "IAM rule to access s3 objects from same account in different account bucket"
-    type        = string
-    default     = ""
-}
+#variable "standard_ia" {
+ # description = "Objects transition to Standard-IA"
+ #   type        = string
+ #   default     = "standard_ia"
+#}
 
-variable "destination_bucket" {
-  description = "Replicate objects in destination bucket in different account"
-    type        = string
-    default     = ""
-}
-variable "prefix" {
-  description = "To apply to all objects or filter objects in the bucket"
-    type        = string
-    default     = ""
-}
+# variable "glacier_days" {
+ # description = "Objects transition days to Glacier"
+   # type        = number
+#}
 
-variable "replication_rules_enabled" {
-  description = "Choose rule will be enabled or disabled when created"
-    type        = string
-    default     = ""
-}
+#variable "glacier" {
+ # description = "Objects transition to Glacier"
+ #   type        = string
+ #   default     = "glacier"
+#}
 
-variable "replicate_objects_encryption" {
-   description = "Replicate objects encrypted with AWS KMS will be true or false"
-    type        = bool
-}
+#variable "expiration_days" {
+  #description = "Objects expire"
+   # type        = number
+#}
 
-variable "replica_kms_id" {
-    type        = string
-    description = "Replicate objects encrypted with AWS KMS"
-  default     = ""
-}
+#variable "sameaccount_replication_rule" {
+  # description = "IAM rule to access s3 objects from same account in different account bucket"
+  #  type        = string
+  #  default     = ""
+#}
+
+#variable "destination_bucket" {
+#  description = "Replicate objects in destination bucket in different account"
+   # type        = string
+   # default     = ""
+#}
+#variable "prefix" {
+ # description = "To apply to all objects or filter objects in the bucket"
+ #   type        = string
+#    default     = ""
+#variable "replication_rules_enabled" {
+ # description = "Choose rule will be enabled or disabled when created"
+  #  type        = string
+   # default     = ""
+#}
+
+#variable "replicate_objects_encryption" {
+   #description = "Replicate objects encrypted with AWS KMS will be true or false"
+    #type        = bool
+#}
+
+#variable "replica_kms_id" {
+   # type        = string
+   # description = "Replicate objects encrypted with AWS KMS"
+  #default     = ""
+#}
 
 variable "bucket_name" {
     type        = string

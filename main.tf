@@ -60,7 +60,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
      #   sse_kms_encrypted_objects {
        #   enabled = var.replicate_objects_encryption
       #  }
-      }
+      #}
     }
   }
 }

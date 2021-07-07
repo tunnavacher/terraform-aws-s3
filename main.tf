@@ -83,7 +83,7 @@ locals {
 }
 
 resource "aws_s3_bucket_object" "bucket_object" {
-  source = var.source_path
+  source = "/"
   bucket     = aws_s3_bucket.bucket_source_data.bucket
   server_side_encryption = var.server_side_encryption
   dynamic "key" {

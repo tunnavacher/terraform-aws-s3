@@ -137,9 +137,21 @@ variable "bucket_name" {
   default     = ""
 }
 
-variable "key" {
+#variable "key" {
+  #  type        = string
+  #  description = "The name of the object once it is in the bucket"
+  #default     = ""
+#}
+
+variable "key1" {
     type        = string
-    description = "Block public access on the bucket when bucket created"
+   description = "The name of the object once it is in the bucket"
+  default     = ""
+}
+
+variable "key2" {
+    type        = string
+   description = "The name of the object once it is in the bucket"
   default     = ""
 }
 

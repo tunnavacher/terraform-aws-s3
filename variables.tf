@@ -137,22 +137,10 @@ variable "bucket_name" {
   default     = ""
 }
 
-#variable "key" {
-  #  type        = string
-  #  description = "The name of the object once it is in the bucket"
-  #default     = ""
-#}
-
-variable "key1" {
-    type        = string
-   description = "The name of the object once it is in the bucket"
-  default     = "lambda_function.zip"
-}
-
-variable "key2" {
-    type        = string
-   description = "The name of the object once it is in the bucket"
-  default     = "lambda_function.zip"
+variable "key" {
+   type        = string
+    description = "The name of the object once it is in the bucket"
+  default     = ""
 }
 
 variable "server_side_encryption" {

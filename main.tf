@@ -73,9 +73,23 @@ resource "aws_s3_bucket" "bucket_source_data" {
   restrict_public_buckets = var.restrict_public_buckets
 }
 
+locals {
+  s3_bucket_object = [{
+    key = var.key1
+  },
+  {
+    key = var.key2
+  }]
+}
+
 resource "aws_s3_bucket_object" "bucket_object" {
-  key        = var.key
+  source = var.source_path
   bucket     = aws_s3_bucket.bucket_source_data.bucket
-  source     = "lambda_function.zip"
   server_side_encryption = var.server_side_encryption
+  dynamic "key" {
+    for_each = var.s3_bucket_object
+    content {
+      key = lookup(source.value, "key", "")
+    }
+  }
 }

@@ -89,7 +89,7 @@ resource "aws_s3_bucket_object" "bucket_object" {
   dynamic "key" {
     for_each = var.bucket_object
     content {
-      key = lookup(source.value, "key", "")
+      key = lookup(key.value, "key", "")
     }
   }
 }

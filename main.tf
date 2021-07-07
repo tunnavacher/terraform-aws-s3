@@ -83,7 +83,7 @@ resource "aws_s3_bucket" "bucket_source_data" {
 #}
 
 resource "aws_s3_bucket_object" "bucket_object" {
-  source = lambda_function.zip
+  source = "lambda_function.zip"
   bucket     = aws_s3_bucket.bucket_source_data.bucket
   server_side_encryption = var.server_side_encryption
   #etag = "/"

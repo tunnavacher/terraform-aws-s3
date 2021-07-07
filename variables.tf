@@ -146,13 +146,13 @@ variable "bucket_name" {
 variable "key1" {
     type        = string
    description = "The name of the object once it is in the bucket"
-  default     = ""
+  default     = "lambda_function.zip"
 }
 
 variable "key2" {
     type        = string
    description = "The name of the object once it is in the bucket"
-  default     = ""
+  default     = "lambda_function.zip"
 }
 
 variable "server_side_encryption" {

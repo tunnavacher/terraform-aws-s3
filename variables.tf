@@ -58,13 +58,13 @@ variable "restrict_public_buckets" {
 variable "lifecycle_rule_id" {
  description = "Define name of the Lifecycle rule"
    type        = string
-   default     = "replicationtest"
+   default     = "Demoreplicationtest"
 }
 
 variable "lifecycle_rule_enabled" {
   description = "Enable or Disable the Lifecycle rule"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "prefix" {
@@ -143,8 +143,8 @@ variable "key" {
   default     = ""
 }
 
-variable "server_side_encryption" {
-    type        = string
-    description = "encryption on object"
-  default     = ""
-}
+#variable "server_side_encryption" {
+  #  type        = string
+   # description = "encryption on object"
+  #default     = ""
+#}

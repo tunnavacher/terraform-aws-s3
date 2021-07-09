@@ -90,4 +90,4 @@ resource "aws_s3_bucket" "bucket_source_data" {
   #for_each = var.bucket_object
   #key = lookup(local.bucket_object, "key", "")
  # key = var.key
-}
+#}

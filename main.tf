@@ -82,12 +82,12 @@ resource "aws_s3_bucket" "bucket_source_data" {
  # }]
 #}
 
-resource "aws_s3_bucket_object" "bucket_object" {
-  source = "lambda_function.zip"
-  bucket     = aws_s3_bucket.bucket_source_data.bucket
-  server_side_encryption = var.server_side_encryption
+#resource "aws_s3_bucket_object" "bucket_object" {
+  #source = "lambda_function.zip"
+  #bucket     = aws_s3_bucket.bucket_source_data.bucket
+  #server_side_encryption = var.server_side_encryption
   #etag = "/"
   #for_each = var.bucket_object
   #key = lookup(local.bucket_object, "key", "")
-  key = var.key
+ # key = var.key
 }
